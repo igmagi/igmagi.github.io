@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Josefin+Sans:wght@400;700&family=Noto+Sans:ital,wght@1,300&display=swap');
+:root{
+    --content: 'Inter', sans-serif;
+    --decor: 'Noto Sans', sans-serif;
+    --headings: 'Josefin Sans', sans-serif;
+
+    --fontColor: #101010;
+    --bgColor: #f3f3f3;
+    --patternColor: #e6edef;
+    --accentColor: #6BF0F9;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  overflow-x:hidden 
+} 
+
+body {
+    font-family: var(--content);
+    color: var(--fontColor);
+    font-size: 1vmin;
+    letter-spacing: 0.3vmin;
+    overflow-x: hidden;
+    background-color: var(--bgColor);
+}
+/*
+    NAVIGATION BAR
+*/
+nav{
+    padding: 0 4vmin;
+    padding-top: 5vmin;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    font-size: 1vmin;
+    display: none;
+    transition: 0.4s;
+    mix-blend-mode: exclusion;
+    filter: invert(100%);
+    z-index: 100;
+}
+nav ul {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+a {
+    text-decoration: none;
+    color: var(--fontColor);
+}
+
+.scrollUp {
+    transform: translateY(-400px)
+}
+
+/*
+    HERO SECTION
+*/
+main {
+    
+    width: 100vw;
+    max-width: 100vw;
+    height: 100vh;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+#title-container {
+    display: flex;
+    font-family: var(--headings);
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    position: relative;
+}
+.title{
+    font-size: 8vmin;
+    font-family: var(--headings);
+}
+#title-container > div {
+    background-color: var(--accentColor);
+    position: absolute;
+    height: 1.3rem;
+    width: 100%;
+    bottom: 0.3vmin;
+    mix-blend-mode: multiply;
+}
+.marker {
+    background-color: var(--accentColor);
+    position: absolute;
+    height: 1.3rem;
+    width: 100%;
+    bottom: 0;
+    mix-blend-mode: multiply;
+}
+
+h1 {
+    font-size: 1.2em;
+    font-weight: normal;
+}
+
+#about-wrapper {
+    width: 100%;
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    letter-spacing: 0.4vmin;
+    font-size: 4vmin;
+}
+/*
+    SECTIONS
+*/
+section {
+    width:100vw;
+}
+
+/*
+    PROJECTS
+*/
+#projects {
+    border-top: 3px solid var(--fontColor);
+    border-bottom: 3px solid var(--fontColor);
+    background-size: 10px 10px;
+    background-image: conic-gradient(
+        var(--patternColor) 90deg,
+        var(--patternColor) 90deg 180deg,
+        var(--bgColor) 180deg 270deg,
+        var(--patternColor) 270deg
+    );
+}
+#projects-wrapper{
+    margin-top: 8vmin;
+    display: flex;
+    padding: 30px 0;
+    flex-direction: column;
+    gap: 8vmin
+}
+.project{
+    user-select: none;
+    width: 100%;
+    border-radius: 2vmin;
+    border: 3px solid var(--fontColor);
+    box-shadow: 1vmin 0.5vmin var(--fontColor);
+    background-color: var(--bgColor);
+    padding: 6vmin 6vmin;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4vmin;
+    cursor: pointer;
+    transition: 300ms;
+}
+.project:hover {
+    transform: scale(1.01);
+}
+
+.project-visual {
+    border-radius: 2vmin;
+    width: 100%;
+    height: 30vmin;
+    margin-bottom: 20px;
+    background-image: url("./assets/qyde.png");
+    background-position: center;
+    background-size: cover;
+}
+
+.project-title {
+    font-family: var(--headings);
+    font-weight: bold;
+    font-size: 4vmin;
+
+}
+.project-description {
+    font-family: var(--decor);
+    font-style: italic;
+    font-size: 2vmin;
+}
+.project-labels {
+    font-size: 1.5vmin;
+    font-weight: bold;
+    display: flex;
+    gap: 1vmin
+}
+.project-labels span{
+    text-transform: capitalize;
+}
+
+.contact-links{
+    font-size: 4vmin;
+    padding-top: 6vmin;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 4vmin
+}
+
+.contact-links > *{
+    transition: 300ms;
+}
+.contact-links > *:hover {
+    background-color: var(--accentColor);
+}
+.phone:hover, .email:hover {
+    user-select: none;
+    cursor: url(./assets/copy1.svg), auto
+}
+.tooltip {
+    position: absolute;
+    opacity: 0;
+    padding: 4px 8px;
+    border: 1px solid var(--fontColor);
+    background-color: var(--bgColor);
+}
+
+.animate-tool {
+    animation: animExpl 1500ms ;
+}
+
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    main {
+       align-items: flex-start;
+       justify-content: flex-end;
+    }
+    #title-container {
+        align-items: flex-start;
+    }
+    #about-wrapper{
+
+       margin-bottom: 8vmin;
+    }
+    nav{
+        display: flex;  
+        font-size: 1.5vmin;
+    }
+    nav li {
+
+        transition: 300ms;
+    }
+     nav li:hover {
+        transform: scale(1.05);
+    }
+
+    #title-container > div {
+        background-color: var(--accentColor);
+        position: absolute;
+        height: 1.3rem;
+        width: 100%;
+        bottom: 2vmin;
+        mix-blend-mode: multiply;
+    }
+
+    #title {
+        font-size: 10vmin;
+    }
+    #logo {
+        width: calc(100vw/11)
+    }
+
+    #projects-button {
+        justify-content: start;
+    }
+
+    #about-bg {
+        font-size: 5vmin;
+    }
+    .phonetics {
+        font-size: 0.7vmin;
+    }
+    
+    .explanation {
+        max-width: 50%;
+        bottom: 0vmin;
+        right: 1vmin;
+    }
+}
+
+@media only screen and (min-width: 1500px) {
+    nav ul {
+        width: 25%;
+    }
+}
+
+@keyframes animExpl {
+  0%   {opacity: 0.7;}
+  7%  {opacity: 1;}
+  53%  {opacity: 1;}
+  100% {opacity: 0;}
+}
+body > * {
+    padding: 60px 8%;
+}
