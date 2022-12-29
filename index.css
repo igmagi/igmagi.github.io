@@ -226,7 +226,7 @@ section {
 }
 .phone:hover, .email:hover {
     user-select: none;
-    cursor: url(./assets/copy1.svg), auto
+    cursor: url(./assets/copy.svg), auto
 }
 .tooltip {
     position: absolute;
