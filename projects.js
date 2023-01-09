@@ -14,7 +14,7 @@ const projects = [
         ],
         links: {
             git: "",
-            live: "wee"
+            live: ""
         },
         img_url: "",
     },
