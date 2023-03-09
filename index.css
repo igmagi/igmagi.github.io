@@ -75,8 +75,8 @@ main {
     
     width: 100vw;
     max-width: 100vw;
-    height: 100vh;
-    max-height: 100vh;
+    height: 95vh;
+    max-height: 95vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -218,15 +218,19 @@ section {
     gap: 4vmin
 }
 
-.contact-links > *{
+.contact-links > div{
     transition: 300ms;
+    display: flex;
+    gap: 8px;
 }
+
 .contact-links > *:hover {
-    background-color: var(--accentColor);
+    background-color: var(--patternColor);
 }
 .phone:hover, .email:hover {
-    user-select: none;
-    cursor: url(./assets/copy.svg), auto
+    /* user-select: none;
+    cursor: url(./assets/copy.svg), auto */
+    cursor:text
 }
 .tooltip {
     position: absolute;
@@ -238,6 +242,14 @@ section {
 
 .animate-tool {
     animation: animExpl 1500ms ;
+}
+img{
+    display: inline;
+    max-width: 2.6vmin
+}
+.img{
+    width: 30px;
+    height:30px
 }
 
 
