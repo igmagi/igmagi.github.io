@@ -144,7 +144,7 @@ const handleCopy = (ev)=>{
         tt.classList.remove("animate-tool")
     },1500))
     
-    navigator.clipboard.writeText(ev.target.getAttribute("cp-data"));
+    navigator.clipboard.writeText(ev.currentTarget.getAttribute("cp-data"));
 }
 
 document.addEventListener("DOMContentLoaded", ()=>{
