@@ -7,13 +7,14 @@
     --fontColor: #101010;
     --bgColor: #f3f3f3;
     --patternColor: #e6edef;
-    --accentColor: #6BF0F9;
+    --accentColor: #f9ca6b;
 }
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-size: 1rem;
 }
 
 html {
@@ -73,15 +74,13 @@ a {
 */
 main {
     
-    width: 100vw;
+
     max-width: 100vw;
-    height: 90vh;
-    max-height: 90vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+
 }
 #title-container {
     display: flex;
@@ -107,7 +106,7 @@ main {
 .marker {
     background-color: var(--accentColor);
     position: absolute;
-    height: 1.3rem;
+    height: 2rem;
     width: 100%;
     bottom: 0;
     mix-blend-mode: multiply;
@@ -115,6 +114,11 @@ main {
 
 h1 {
     font-size: 1.2em;
+    font-weight: normal;
+}
+
+h2 {
+    font-size: 0.9rem;
     font-weight: normal;
 }
 
@@ -266,7 +270,6 @@ img{
     }
     #about-wrapper{
 
-       margin-bottom: 8vmin;
     }
     nav{
         display: flex;  
@@ -326,6 +329,21 @@ img{
   53%  {opacity: 1;}
   100% {opacity: 0;}
 }
+
 body > * {
-    padding: 60px 8%;
+    padding: 32px 64px
+}
+
+#contact > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: pulse 2000ms infinite;
+
+}
+
+@keyframes pulse {
+    0%      {background-color: none;}
+    50%     {background-color: var(--accentColor);}
+    100%    {background-color: none;}
 }
